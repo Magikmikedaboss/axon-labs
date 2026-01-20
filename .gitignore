@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# shell command artifacts (prevent accidental capture of terminal commands)
+&&*
+||*
+;*
+git*

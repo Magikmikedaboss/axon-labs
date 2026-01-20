@@ -15,9 +15,9 @@ export default function ProtocolHubPage({ params }: { params: { slug: string } }
     <SiteShell>
       <div className="wrap pt-10 sm:pt-14 pb-14">
         <div className="surface p-7 sm:p-10">
-          <div className="text-xs text-white/60 uppercase tracking-[0.18em]">{p.tag}</div>
+          <div className="text-xs font-semibold tracking-wider uppercase text-blue-600">{p.tag}</div>
           <h1 className="h1 mt-3">{p.title}</h1>
-          <p className="mt-4 text-white/70 max-w-3xl leading-relaxed">{p.summary}</p>
+          <p className="mt-4 text-slate-600 max-w-3xl leading-relaxed">{p.summary}</p>
 
           <div className="mt-7 flex flex-col sm:flex-row gap-3">
             <Button href="/protocols" variant="ghost">
@@ -29,14 +29,14 @@ export default function ProtocolHubPage({ params }: { params: { slug: string } }
             </Button>
           </div>
 
-          <div className="mt-6 text-xs text-white/55">
+          <div className="mt-6 text-xs text-slate-500">
             Educational content only. This hub is informational and not medical advice. No dosing guidance is provided.
           </div>
         </div>
 
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           <Panel title="What this hub covers">
-            <ul className="space-y-2 text-sm text-white/70">
+            <ul className="space-y-2 text-sm text-slate-600">
               {p.bullets.map((b) => (
                 <li key={b}>• {b}</li>
               ))}
@@ -44,7 +44,7 @@ export default function ProtocolHubPage({ params }: { params: { slug: string } }
           </Panel>
 
           <Panel title="Risk notes (read first)">
-            <ul className="space-y-2 text-sm text-white/70">
+            <ul className="space-y-2 text-sm text-slate-600">
               {p.riskNotes.map((r) => (
                 <li key={r}>• {r}</li>
               ))}
@@ -54,7 +54,7 @@ export default function ProtocolHubPage({ params }: { params: { slug: string } }
           <Panel title="Quick links">
             <div className="flex flex-col gap-2 text-sm">
               {p.topics.map((t) => (
-                <a key={t.href} href={t.href} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10 transition">
+                <a key={t.href} href={t.href} className="border border-slate-300 bg-slate-50 px-4 py-3 hover:bg-slate-100 transition">
                   {t.label}
                 </a>
               ))}
@@ -72,7 +72,7 @@ export default function ProtocolHubPage({ params }: { params: { slug: string } }
           <ArticleSection
             id="quality"
             title="Quality & sourcing"
-            text="In gray markets, quality varies dramatically. Documentation, handling, cold-chain practices, and independent testing are the difference between useful research material and expensive uncertainty."
+            text="In gray markets, quality varies dramatically. Documentation, handling, cold-chain practices, and independent testing are difference between useful research material and expensive uncertainty."
           />
           <ArticleSection
             id="measure"
@@ -87,7 +87,7 @@ export default function ProtocolHubPage({ params }: { params: { slug: string } }
           <ArticleSection
             id="environment"
             title="Sleep environment"
-            text="Temperature, noise, light, and bedtime routines are boring, but they're the levers that keep working."
+            text="Temperature, noise, light, and bedtime routines are boring, but they're levers that keep working."
           />
           <ArticleSection
             id="tracking"
@@ -117,8 +117,8 @@ export default function ProtocolHubPage({ params }: { params: { slug: string } }
 
 function Panel(props: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-      <div className="text-sm font-semibold">{props.title}</div>
+    <div className="surface-sharp p-6">
+      <div className="text-sm font-semibold text-slate-900">{props.title}</div>
       <div className="mt-3">{props.children}</div>
     </div>
   );
@@ -127,8 +127,8 @@ function Panel(props: { title: string; children: React.ReactNode }) {
 function ArticleSection(props: { id: string; title: string; text: string }) {
   return (
     <section id={props.id} className="surface p-7 sm:p-10">
-      <div className="text-lg font-semibold">{props.title}</div>
-      <p className="mt-3 text-sm text-white/70 leading-relaxed max-w-3xl">{props.text}</p>
+      <div className="text-lg font-semibold text-slate-900">{props.title}</div>
+      <p className="mt-3 text-sm text-slate-600 leading-relaxed max-w-3xl">{props.text}</p>
     </section>
   );
 }

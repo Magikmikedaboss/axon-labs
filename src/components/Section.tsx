@@ -1,20 +1,24 @@
 export default function Section(props: {
   id?: string;
-  title: string;
   kicker?: string;
+  title: string;
   children: React.ReactNode;
+  className?: string;
 }) {
-  const { id, title, kicker, children } = props;
+  const { id, kicker, title, children, className } = props;
+
   return (
-    <section id={id} className="py-14 sm:py-16">
+    <section id={id} className={`section-spacer ${className || ''}`}>
       <div className="wrap">
-        <div className="max-w-2xl">
-          {kicker ? (
-            <div className="text-xs uppercase tracking-[0.2em] text-white/60">{kicker}</div>
-          ) : null}
-          <div className="h2 mt-3">{title}</div>
+        <div className="mb-8">
+          {kicker && (
+            <div className="text-xs font-semibold tracking-wider uppercase text-blue-600 mb-2">
+              {kicker}
+            </div>
+          )}
+          <h2 className="h2">{title}</h2>
         </div>
-        <div className="mt-8">{children}</div>
+        {children}
       </div>
     </section>
   );
