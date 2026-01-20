@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
-:root {
-  --bg: 6 8 12;
-  --panel: 12 16 24;
-  --panel2: 10 12 18;
-  --text: 236 240 247;
-  --muted: 160 170 185;
-  --border: 35 45 65;
-  --accent: 74 222 255; /* cyan-ish */
-  --accent2: 168 85 247; /* violet-ish */
+@theme {
+  --color-bg: rgb(6 8 12);
+  --color-panel: rgb(12 16 24);
+  --color-panel2: rgb(10 12 18);
+  --color-text: rgb(236 240 247);
+  --color-muted: rgb(160 170 185);
+  --color-border: rgb(35 45 65);
+  --color-accent: rgb(74 222 255);
+  --color-accent2: rgb(168 85 247);
 }
 
 html, body {
@@ -16,10 +16,10 @@ html, body {
 }
 
 body {
-  color: rgb(var(--text));
-  background: radial-gradient(1200px 800px at 20% 10%, rgba(var(--accent), 0.12), transparent 55%),
-              radial-gradient(900px 700px at 80% 20%, rgba(var(--accent2), 0.10), transparent 60%),
-              rgb(var(--bg));
+  color: var(--color-text);
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(var(--color-accent), 0.12), transparent 55%),
+              radial-gradient(900px 700px at 80% 20%, rgba(var(--color-accent2), 0.10), transparent 60%),
+              var(--color-bg);
   font-feature-settings: "ss01" 1, "ss02" 1;
 }
 
@@ -40,14 +40,14 @@ body {
 }
 
 .surface {
-  background: linear-gradient(180deg, rgba(var(--panel), 0.92), rgba(var(--panel2), 0.92));
-  border: 1px solid rgba(var(--border), 0.75);
+  background: linear-gradient(180deg, rgba(var(--color-panel), 0.92), rgba(var(--color-panel2), 0.92));
+  border: 1px solid rgba(var(--color-border), 0.75);
   box-shadow: 0 20px 60px rgba(0,0,0,.45);
   border-radius: 20px;
 }
 
 .muted {
-  color: rgb(var(--muted));
+  color: var(--color-muted);
 }
 
 .h1 {
