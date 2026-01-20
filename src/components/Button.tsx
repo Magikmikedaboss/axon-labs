@@ -11,7 +11,7 @@ type Props = {
 
 export default function Button({ href, onClick, children, variant = "primary", className }: Props) {
   const base =
-    "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-white/30";
+    "inline-flex items-center justify-center rounded-full !px-2.5 !py-1 text-xs font-semibold transition focus:outline-none focus:ring-2 focus:ring-white/30";
   const styles =
     variant === "primary"
       ? "bg-white text-black hover:bg-white/90"
