@@ -8,12 +8,28 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
-  metadataBase: new URL("https://example.com"), // change when you have a domain
+  metadataBase: new URL(SITE.url),
   icons: [{ rel: "icon", url: "/favicon.ico" }],
   openGraph: {
     title: SITE.name,
     description: SITE.description,
     type: "website",
+    url: SITE.url,
+    siteName: SITE.name,
+    images: [
+      {
+        url: SITE.ogImage,
+        width: 1200,
+        height: 630,
+        alt: SITE.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.name,
+    description: SITE.description,
+    images: [SITE.ogImage],
   },
 };
 

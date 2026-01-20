@@ -117,7 +117,7 @@ export default function ResearchFocusPage() {
 
                 <Card title="Common misconceptions">
                   Aesthetic research is often misunderstood online. Common errors include:
-                  <ul className="mt-3 space-y-y-2">
+                  <ul className="mt-3 space-y-2">
                     <li>• Assuming pathway interaction guarantees visible change</li>
                     <li>• Treating research compounds as cosmetic products</li>
                     <li>• Confusing short-term surface changes with long-term adaptation</li>
@@ -166,8 +166,7 @@ export default function ResearchFocusPage() {
               <div className="text-xs font-semibold tracking-wider uppercase text-blue-600">Coming next</div>
               <h3 className="mt-2 text-lg sm:text-xl font-semibold text-slate-900">Recovery & Tissue Signaling</h3>
               <p className="mt-3 text-sm text-slate-600 leading-relaxed max-w-3xl">
-                We&apos;ll add this as next focus section once your RUO anchor page is live, so every topic
-                stays consistent with same boundaries and tone.
+                Explore how cellular repair mechanisms, tissue adaptation pathways, and recovery signaling are studied in laboratory research. We&apos;ll cover what&apos;s known, what&apos;s speculative, and how to distinguish between data and marketing claims.
               </p>
             </section>
 
@@ -175,8 +174,7 @@ export default function ResearchFocusPage() {
               <div className="text-xs font-semibold tracking-wider uppercase text-blue-600">Coming next</div>
               <h3 className="mt-2 text-lg sm:text-xl font-semibold text-slate-900">Cellular Stress & Longevity Research</h3>
               <p className="mt-3 text-sm text-slate-600 leading-relaxed max-w-3xl">
-                Same approach: definitions, what researchers study, what it does not mean, and how Axon Labs
-                positions everything as educational + RUO.
+                Understand how researchers study cellular stress responses, aging pathways, and longevity markers. We&apos;ll examine the science behind popular claims and provide clear, research-based context on what&apos;s actually measurable and what remains theoretical.
               </p>
             </section>
           </div>

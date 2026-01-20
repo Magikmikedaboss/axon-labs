@@ -37,7 +37,7 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={style}>
+      <Link href={href} className={style} onClick={onClick}>
         {children}
       </Link>
     ) as React.ReactElement;

@@ -5,6 +5,7 @@ import ProtocolCard from "@/components/ProtocolCard";
 import NewsletterForm from "@/components/NewsletterForm";
 import InfoWidget from "@/components/InfoWidget";
 import DataWidget from "@/components/DataWidget";
+import LibraryItem from "@/components/LibraryItem";
 import { SITE } from "@/lib/site";
 
 export default function HomePage() {
@@ -15,15 +16,16 @@ export default function HomePage() {
         <div className="absolute inset-0">
           <img 
             src="/future_laboratory-with-a-lot-of-glassware-and-shelves.jpg" 
-            alt="Future laboratory"
+            alt=""
             className="w-full h-full object-cover"
+            loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
         </div>
         
         <div className="relative z-10 wrap pt-16 sm:pt-24 pb-12 sm:pb-16">
           <div className="max-w-4xl">
-            <div className="inline-flex flex-wrap items-center gap-2 border border-white/30 bg-white/10 backdrop-blur-sm px-3 py-1.5 text-[10px] sm:text-xs text-white">
+            <div className="inline-flex flex-wrap items-center gap-2 border border-white/30 bg-white/10 backdrop-blur-sm px-3 py-1.5 text-[12px] sm:text-xs text-white">
               <span className="kbd">Research-first</span>
               <span className="text-white/70">•</span>
               <span className="hidden sm:inline">Biohacking education + protocols</span>
@@ -55,7 +57,7 @@ export default function HomePage() {
           </div>
 
           {/* Right column: conversion box */}
-          <div className="mt-10 lg:mt-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[400px]">
+          <div className="mt-10 lg:mt-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[400px] lg:max-w-[300px] lg:ml-8">
             <div className="surface p-6 rounded-xl">
               <NewsletterForm source="home-hero" compact />
               
@@ -192,25 +194,6 @@ function TrustPill(props: { title: string; text: string }) {
     <div className="surface-sharp p-4 sm:p-5 rounded-xl">
       <div className="text-xs sm:text-sm font-semibold text-slate-900">{props.title}</div>
       <div className="mt-1.5 text-xs text-slate-600 leading-snug">{props.text}</div>
-    </div>
-  );
-}
-
-function LibraryItem(props: { title: string; text: string; image?: string }) {
-  return (
-    <div className="surface-sharp p-5 sm:p-6 rounded-xl">
-      {props.image && (
-        <div className="relative overflow-hidden rounded-xl mb-4">
-          <img 
-            src={props.image} 
-            alt={props.title}
-            className="w-full h-32 object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-        </div>
-      )}
-      <div className="text-xs sm:text-sm font-semibold text-slate-900">{props.title}</div>
-      <div className="mt-2.5 text-sm text-slate-600 leading-relaxed">{props.text}</div>
     </div>
   );
 }
