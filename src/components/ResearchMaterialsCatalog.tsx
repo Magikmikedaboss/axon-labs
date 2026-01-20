@@ -239,24 +239,24 @@ export default function ResearchMaterialsCatalog({ items }: Props) {
   return (
     <div className="space-y-6">
       {/* Filters */}
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+      <div className="surface-sharp p-6">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <div className="text-sm font-semibold">Filters</div>
-            <div className="mt-1 text-xs text-white/60">
+            <div className="text-sm font-semibold text-slate-900">Filters</div>
+            <div className="mt-1 text-xs text-slate-600">
               Documentation-first catalog. No medical claims. No usage instructions.
             </div>
           </div>
 
-          <div className="flex items-center gap-2 text-xs text-white/60">
-            <span className="rounded-full border border-white/10 bg-black/25 px-3 py-1">
+          <div className="flex items-center gap-2 text-xs text-slate-600">
+            <span className="border border-slate-300 bg-slate-50 px-3 py-1">
               Showing{" "}
-              <span className="text-white/80 font-semibold">{filteredAndSorted.length}</span> of{" "}
-              <span className="text-white/80 font-semibold">{items.length}</span>
+              <span className="font-semibold text-slate-900">{filteredAndSorted.length}</span> of{" "}
+              <span className="font-semibold text-slate-900">{items.length}</span>
             </span>
             <button
               onClick={clear}
-              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 hover:bg-white/10 transition"
+              className="border border-slate-300 bg-slate-50 px-3 py-1 hover:bg-slate-100 transition"
             >
               Clear
             </button>
@@ -276,12 +276,12 @@ export default function ResearchMaterialsCatalog({ items }: Props) {
           />
 
           <div>
-            <div className="text-xs text-white/60 mb-1">Search</div>
+            <div className="text-xs text-slate-600 mb-1">Search</div>
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Name, tag, notes…"
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-white/20"
+              className="w-full border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
             />
           </div>
         </div>
@@ -292,24 +292,24 @@ export default function ResearchMaterialsCatalog({ items }: Props) {
         {filteredAndSorted.map((m) => (
           <div
             key={m.id}
-            className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/7 transition"
+            className="surface-sharp p-6 hover:bg-slate-50 transition-colors duration-200"
           >
             <div className="flex items-start justify-between gap-3">
               <div>
-                <div className="text-xs text-white/60 uppercase tracking-[0.18em]">{m.category}</div>
-                <div className="mt-2 text-lg font-semibold">{m.name}</div>
+                <div className="text-xs font-semibold tracking-wider uppercase text-blue-600">{m.category}</div>
+                <div className="mt-2 text-lg font-semibold text-slate-900">{m.name}</div>
               </div>
               <StatusPill status={m.status} />
             </div>
 
-            <p className="mt-3 text-sm text-white/70 leading-relaxed">{m.blurb}</p>
+            <p className="mt-3 text-sm text-slate-600 leading-relaxed">{m.blurb}</p>
 
             <div className="mt-4 flex flex-wrap gap-2">
               {m.tags.map((t) => (
                 <button
                   key={t}
                   onClick={() => setTag(t)}
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70 hover:bg-white/10 transition"
+                  className="border border-slate-300 bg-slate-50 px-3 py-1 text-xs text-slate-600 hover:bg-slate-100 transition"
                   title="Filter by tag"
                 >
                   {t}
@@ -317,9 +317,9 @@ export default function ResearchMaterialsCatalog({ items }: Props) {
               ))}
             </div>
 
-            <div className="mt-5 rounded-xl border border-white/10 bg-black/25 p-4">
-              <div className="text-xs uppercase tracking-[0.18em] text-white/60">Notes</div>
-              <ul className="mt-2 space-y-2 text-xs text-white/65 leading-relaxed">
+            <div className="mt-5 border border-slate-200 bg-slate-50 p-4">
+              <div className="text-xs font-semibold tracking-wider uppercase text-slate-600">Notes</div>
+              <ul className="mt-2 space-y-2 text-xs text-slate-600 leading-relaxed">
                 {m.notes.map((n) => (
                   <li key={n}>• {n}</li>
                 ))}
@@ -353,11 +353,11 @@ function Select<T extends string>(props: {
 }) {
   return (
     <div>
-      <div className="text-xs text-white/60 mb-1">{props.label}</div>
+      <div className="text-xs text-slate-600 mb-1">{props.label}</div>
       <select
         value={props.value}
         onChange={(e) => props.onChange(e.target.value as T)}
-        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-white/20"
+        className="w-full border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
       >
         {props.options.map((o) => (
           <option key={o} value={o}>
@@ -370,11 +370,11 @@ function Select<T extends string>(props: {
 }
 
 function StatusPill({ status }: { status: "In stock" | "Limited" | "Preorder" }) {
-  const base = "shrink-0 rounded-full border px-3 py-1 text-xs font-semibold";
+  const base = "shrink-0 border px-3 py-1 text-xs font-semibold";
   const map: Record<typeof status, string> = {
-    "In stock": "border-white/15 bg-white/5 text-white/80",
-    Limited: "border-white/15 bg-white/10 text-white",
-    Preorder: "border-white/15 bg-black/30 text-white/70",
+    "In stock": "border-green-300 bg-green-50 text-green-800",
+    Limited: "border-yellow-300 bg-yellow-50 text-yellow-800",
+    Preorder: "border-slate-300 bg-slate-100 text-slate-600",
   };
   return <span className={`${base} ${map[status]}`}>{status}</span>;
 }

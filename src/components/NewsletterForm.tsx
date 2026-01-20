@@ -56,9 +56,9 @@ export default function NewsletterForm({
   }
 
   return (
-    <div className={compact ? "" : "rounded-2xl border border-white/10 bg-white/5 p-6"}>
-      <div className="text-sm font-semibold">{title}</div>
-      <p className="mt-2 text-sm text-white/70 leading-relaxed">{helper}</p>
+    <div className={compact ? "" : "surface-sharp p-6"}>
+      <div className="text-sm font-semibold text-slate-900">{title}</div>
+      <p className="mt-2 text-sm text-slate-600 leading-relaxed">{helper}</p>
 
       <form onSubmit={onSubmit} className="mt-4 flex flex-col gap-3 sm:flex-row">
         <input
@@ -68,7 +68,7 @@ export default function NewsletterForm({
           placeholder="you@email.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-white/20"
+          className="w-full border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
         />
 
         <Button className="sm:w-auto w-full" onClick={() => {}}>
@@ -76,16 +76,16 @@ export default function NewsletterForm({
         </Button>
       </form>
 
-      <div className="mt-3 text-xs text-white/55">
+      <div className="mt-3 text-xs text-slate-500">
         Educational content only. Unsubscribe anytime.
       </div>
 
       {msg ? (
         <div
-          className={`mt-3 rounded-xl border px-4 py-3 text-sm ${
+          className={`mt-3 border px-4 py-3 text-sm ${
             status === "success"
-              ? "border-white/10 bg-white/5 text-white"
-              : "border-white/10 bg-black/25 text-white/80"
+              ? "border-green-200 bg-green-50 text-green-800"
+              : "border-red-200 bg-red-50 text-red-800"
           }`}
         >
           {msg}

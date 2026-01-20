@@ -9,14 +9,14 @@ export default function ProtocolsPage() {
     <SiteShell>
       <div className="wrap pt-10 sm:pt-14 pb-6">
         <div className="surface p-7 sm:p-10">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
+          <div className="inline-flex items-center gap-2 border border-slate-300 bg-slate-50 px-3 py-1 text-xs text-slate-600">
             <span className="kbd">Education</span>
-            <span className="text-white/40">•</span>
+            <span className="text-slate-400">•</span>
             <span>Protocol hubs, not prescriptions</span>
           </div>
 
           <h1 className="h1 mt-5">Protocols</h1>
-          <p className="mt-4 text-white/70 max-w-2xl leading-relaxed">
+          <p className="mt-4 text-slate-600 max-w-2xl leading-relaxed">
             These are research-context hubs built around fundamentals, measurement, and restraint.
             No dosing. No medical advice. Just signal.
           </p>
@@ -28,7 +28,7 @@ export default function ProtocolsPage() {
             </Button>
           </div>
 
-          <div className="mt-6 text-xs text-white/55">
+          <div className="mt-6 text-xs text-slate-500">
             Educational content only. Research materials, if offered, are for laboratory use only and not for human consumption.
           </div>
         </div>
@@ -37,10 +37,10 @@ export default function ProtocolsPage() {
       <Section id="protocol-hubs" kicker="Hubs" title="Pick a lane, then go deep">
         <div className="grid gap-4 md:grid-cols-3">
           {PROTOCOLS.map((p) => (
-            <div key={p.slug} className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/7 transition">
-              <div className="text-xs text-white/60 uppercase tracking-[0.18em]">{p.tag}</div>
-              <div className="mt-3 text-lg font-semibold">{p.title}</div>
-              <p className="mt-2 text-sm text-white/70 leading-relaxed">{p.summary}</p>
+            <div key={p.slug} className="surface-sharp p-6 hover:bg-slate-50 transition-colors duration-200">
+              <div className="text-xs font-semibold tracking-wider uppercase text-blue-600">{p.tag}</div>
+              <div className="mt-3 text-lg font-semibold text-slate-900">{p.title}</div>
+              <p className="mt-2 text-sm text-slate-600 leading-relaxed">{p.summary}</p>
 
               <div className="mt-5 flex gap-2">
                 <Button href={`/protocols/${p.slug}`} className="px-4 py-2">
