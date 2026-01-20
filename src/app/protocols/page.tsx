@@ -60,13 +60,13 @@ export default function ProtocolsPage() {
           <div className="grid gap-6 md:grid-cols-3">
             <Step title="1) Baseline" text="Decide what you're measuring (sleep, training, labs, symptoms) before changing inputs." />
             <Step title="2) One variable" text="Change a single lever. Give it time. Avoid stacks that turn results into guesswork." />
-            <Step title="3) Review" text="If the data doesn't move, don't invent a story. Iterate or drop it." />
+            <Step title="3) Review" text="If data doesn't move, don't invent a story. Iterate or drop it." />
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <Button href="/research-materials">Research materials</Button>
             <Button href="/#library" variant="ghost">
-              Read the library →
+              Read library →
             </Button>
           </div>
         </div>
@@ -83,9 +83,9 @@ export default function ProtocolsPage() {
 
 function Step(props: { title: string; text: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-      <div className="text-sm font-semibold">{props.title}</div>
-      <div className="mt-2 text-sm text-white/70 leading-relaxed">{props.text}</div>
+    <div className="surface-sharp p-6">
+      <div className="text-sm font-semibold text-slate-900">{props.title}</div>
+      <div className="mt-2 text-sm text-slate-600 leading-relaxed">{props.text}</div>
     </div>
   );
 }
