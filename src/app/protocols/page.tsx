@@ -37,9 +37,9 @@ export default function ProtocolsPage() {
       <Section id="protocol-hubs" kicker="Hubs" title="Pick a lane, then go deep">
         <div className="grid gap-4 md:grid-cols-3">
           {PROTOCOLS.map((p) => (
-            <div key={p.slug} className="surface-sharp p-6 hover:bg-slate-50 transition-colors duration-200">
+            <div key={p.slug} className="surface-sharp p-4 sm:p-6 hover:bg-slate-50 transition-colors duration-200">
               <div className="text-xs font-semibold tracking-wider uppercase text-blue-600">{p.tag}</div>
-              <div className="mt-3 text-lg font-semibold text-slate-900">{p.title}</div>
+              <div className="mt-3 text-base sm:text-lg font-semibold text-slate-900">{p.title}</div>
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">{p.summary}</p>
 
               <div className="mt-5 flex gap-2">
@@ -83,7 +83,7 @@ export default function ProtocolsPage() {
 
 function Step(props: { title: string; text: string }) {
   return (
-    <div className="surface-sharp p-6">
+    <div className="surface-sharp p-4 sm:p-6">
       <div className="text-sm font-semibold text-slate-900">{props.title}</div>
       <div className="mt-2 text-sm text-slate-600 leading-relaxed">{props.text}</div>
     </div>

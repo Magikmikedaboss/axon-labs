@@ -36,14 +36,14 @@ export default function ResearchFocusPage() {
           {/* ===== Focus Sections ===== */}
           <div className="mt-10 space-y-6">
             {/* Aesthetic Biology Section */}
-            <section className="border border-slate-300 bg-slate-50 p-7">
+            <section className="border border-slate-300 bg-slate-50 p-4 sm:p-7">
               <div className="flex flex-wrap items-center gap-3">
                 <div className="text-xs font-semibold tracking-wider uppercase text-blue-600">
                   Focus Area
                 </div>
                 <RuoAnchor />
               </div>
-              <h2 className="mt-2 text-2xl font-semibold text-slate-900">Aesthetic Biology</h2>
+              <h2 className="mt-2 text-xl sm:text-2xl font-semibold text-slate-900">Aesthetic Biology</h2>
               <p className="mt-3 text-sm text-slate-600 leading-relaxed max-w-3xl">
                 Research Context for Skin, Hair, and Cellular Appearance
               </p>
@@ -162,18 +162,18 @@ export default function ResearchFocusPage() {
             </section>
 
             {/* Placeholder for future sections (optional) */}
-            <section className="border border-slate-300 bg-slate-50 p-7">
+            <section className="border border-slate-300 bg-slate-50 p-4 sm:p-7">
               <div className="text-xs font-semibold tracking-wider uppercase text-blue-600">Coming next</div>
-              <h3 className="mt-2 text-xl font-semibold text-slate-900">Recovery & Tissue Signaling</h3>
+              <h3 className="mt-2 text-lg sm:text-xl font-semibold text-slate-900">Recovery & Tissue Signaling</h3>
               <p className="mt-3 text-sm text-slate-600 leading-relaxed max-w-3xl">
                 We&apos;ll add this as next focus section once your RUO anchor page is live, so every topic
                 stays consistent with same boundaries and tone.
               </p>
             </section>
 
-            <section className="border border-slate-300 bg-slate-50 p-7">
+            <section className="border border-slate-300 bg-slate-50 p-4 sm:p-7">
               <div className="text-xs font-semibold tracking-wider uppercase text-blue-600">Coming next</div>
-              <h3 className="mt-2 text-xl font-semibold text-slate-900">Cellular Stress & Longevity Research</h3>
+              <h3 className="mt-2 text-lg sm:text-xl font-semibold text-slate-900">Cellular Stress & Longevity Research</h3>
               <p className="mt-3 text-sm text-slate-600 leading-relaxed max-w-3xl">
                 Same approach: definitions, what researchers study, what it does not mean, and how Axon Labs
                 positions everything as educational + RUO.
@@ -188,7 +188,7 @@ export default function ResearchFocusPage() {
 
 function Card(props: { title: string; children: React.ReactNode }) {
   return (
-    <div className="border border-slate-300 bg-slate-50 p-6">
+    <div className="border border-slate-300 bg-slate-50 p-4 sm:p-6">
       <div className="text-sm font-semibold text-slate-900">{props.title}</div>
       <div className="mt-3 text-sm text-slate-600 leading-relaxed">{props.children}</div>
     </div>

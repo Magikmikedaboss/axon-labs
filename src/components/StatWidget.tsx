@@ -13,7 +13,7 @@ export default function StatWidget(props: {
   };
 
   return (
-    <div className={`surface-sharp p-5 ${className || ''}`}>
+    <div className={`surface-sharp p-4 sm:p-5 ${className || ''}`}>
       <div className="text-3xl font-bold text-slate-900 tracking-tight">
         {value}
       </div>

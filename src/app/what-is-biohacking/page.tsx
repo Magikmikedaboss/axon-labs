@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function Pill(props: { text: string }) {
   return (
-    <div className="border border-slate-300 bg-slate-50 px-4 py-2.5 text-sm text-slate-600 hover:bg-slate-100 transition">
+    <div className="border border-slate-300 bg-slate-50 px-3 py-2 text-xs sm:text-sm text-slate-600 hover:bg-slate-100 transition sm:px-4 sm:py-2.5">
       {props.text}
     </div>
   );
