@@ -3,42 +3,45 @@ import Section from "@/components/Section";
 import Button from "@/components/Button";
 import ProtocolCard from "@/components/ProtocolCard";
 import NewsletterForm from "@/components/NewsletterForm";
+import InfoWidget from "@/components/InfoWidget";
+import DataWidget from "@/components/DataWidget";
 import { SITE } from "@/lib/site";
 
 export default function HomePage() {
   return (
     <SiteShell>
       {/* HERO */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 grid-overlay opacity-60 pointer-events-none" />
-        <div className="wrap pt-14 sm:pt-20 pb-10 sm:pb-14">
-          <div className="surface p-7 sm:p-10">
-            <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+      <div className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100">
+        <div className="absolute inset-0 grid-overlay opacity-40 pointer-events-none" />
+        <div className="wrap pt-16 sm:pt-24 pb-12 sm:pb-16">
+          <div className="surface p-8 sm:p-12">
+            <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
               <div className="max-w-2xl">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
+                <div className="inline-flex flex-wrap items-center gap-2 border border-slate-300 bg-slate-50 px-3 py-1.5 text-[10px] sm:text-xs text-slate-600">
                   <span className="kbd">Research-first</span>
-                  <span className="text-white/40">•</span>
-                  <span>Biohacking education + protocols</span>
+                  <span className="text-slate-400">•</span>
+                  <span className="hidden sm:inline">Biohacking education + protocols</span>
+                  <span className="sm:hidden">Biohacking education</span>
                 </div>
 
-                <h1 className="h1 mt-5">{SITE.tagline}</h1>
-                <p className="mt-4 text-base sm:text-lg text-white/70 leading-relaxed">
+                <h1 className="h1 mt-6">{SITE.tagline}</h1>
+                <p className="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed">
                   Axon Labs is a research-driven guide to peptides, signaling pathways, and performance
                   systems. Built for curious optimizers who want clarity, not hype.
                 </p>
 
-                <div className="mt-7 flex flex-col sm:flex-row gap-3">
-                  <Button href="#protocols" className="sm:w-auto">Explore Protocols</Button>
-                  <Button href="#library" variant="ghost" className="sm:w-auto">Learn the science</Button>
+                <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                  <Button href="#protocols" size="md">Explore Protocols</Button>
+                  <Button href="#library" variant="ghost" size="md">Learn</Button>
                 </div>
 
-                <div className="mt-6 text-xs text-white/55">
+                <div className="mt-6 text-xs text-slate-500 leading-relaxed">
                   Educational content only. No medical advice. Research materials, if offered, are for
                   laboratory use only.
                 </div>
 
                 {/* trust strip */}
-                <div className="mt-8 grid gap-3 sm:grid-cols-3">
+                <div className="mt-10 grid gap-3 sm:grid-cols-3">
                   <TrustPill title="Data over anecdotes" text="Clear explanations with sources." />
                   <TrustPill title="No miracle claims" text="We avoid hype and hard-sell." />
                   <TrustPill title="Transparency first" text="Standards, testing, boundaries." />
@@ -46,14 +49,16 @@ export default function HomePage() {
               </div>
 
               {/* Right column: conversion box */}
-              <div className="md:w-[360px]">
+              <div className="lg:w-[400px]">
                 <NewsletterForm source="home-hero" compact />
 
-                <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-5 text-xs text-white/60 leading-relaxed">
-                  <span className="text-white/80 font-semibold">Note:</span> Axon Labs is an educational
-                  platform. If you're exploring research materials, understand regulatory boundaries and
-                  consult qualified professionals where appropriate.
-                </div>
+                <InfoWidget 
+                  className="mt-4"
+                  title="Note"
+                >
+                  Axon Labs is an educational platform. If you're exploring research materials, understand
+                  regulatory boundaries and consult qualified professionals where appropriate.
+                </InfoWidget>
               </div>
             </div>
           </div>
@@ -70,12 +75,12 @@ export default function HomePage() {
           <ProtocolCard
             tag="Recovery"
             title="Tissue signaling & resilience"
-            desc="Understand pathways involved in repair, adaptation, and recovery. Learn what&apos;s supported, what&apos;s speculative, and what&apos;s risky."
+            desc="Understand pathways involved in repair, adaptation, and recovery. Learn what's supported, what's speculative, and what's risky."
           />
           <ProtocolCard
             tag="Sleep"
             title="Downshift, deepen, rebuild"
-            desc={`Sleep is the highest-ROI biohack. We map the fundamentals and where "advanced tools" actually fit, if at all.`}
+            desc="Sleep is highest-ROI biohack. We map fundamentals and where advanced tools actually fit, if at all."
           />
           <ProtocolCard
             tag="Longevity"
@@ -87,7 +92,7 @@ export default function HomePage() {
 
       {/* LIBRARY */}
       <Section id="library" kicker="Research library" title="Peptides, explained without the fog machine">
-        <div className="surface p-7 sm:p-10">
+        <div className="surface p-8 sm:p-12">
           <div className="grid gap-6 md:grid-cols-3">
             <LibraryItem
               title="What peptides are"
@@ -95,17 +100,17 @@ export default function HomePage() {
             />
             <LibraryItem
               title="Quality & sourcing"
-              text={`The real differentiator. We cover testing, storage, stability, and why "cheap" gets expensive.`}
+              text="The real differentiator. We cover testing, storage, stability, and why cheap gets expensive."
             />
             <LibraryItem
               title="How to think in protocols"
-              text="Measure, change one variable, measure again. If it can&apos;t be tracked, it&apos;s mostly a story."
+              text="Measure, change one variable, measure again. If it can't be tracked, it's mostly a story."
             />
           </div>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <Button href="#newsletter">Get the free welcome packet</Button>
-            <Button href="#standards" variant="ghost">
+          <div className="mt-10 flex flex-col sm:flex-row gap-3">
+            <Button href="#newsletter" size="md">Get free welcome packet</Button>
+            <Button href="#standards" variant="ghost" size="md">
               Read standards →
             </Button>
           </div>
@@ -115,38 +120,36 @@ export default function HomePage() {
       {/* STANDARDS */}
       <Section id="standards" kicker="Trust" title="Ethics before everything">
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-            <div className="text-lg font-semibold">What we do</div>
-            <ul className="mt-3 space-y-2 text-sm text-white/70">
-              <li>• Explain mechanisms in plain English</li>
-              <li>• Separate data from influencer folklore</li>
-              <li>• Promote measurement and restraint</li>
-              <li>• Publish boundaries clearly</li>
+          <DataWidget title="What we do">
+            <ul className="space-y-2 text-sm text-slate-600">
+              <li>Explain mechanisms in plain English</li>
+              <li>Separate data from influencer folklore</li>
+              <li>Promote measurement and restraint</li>
+              <li>Publish boundaries clearly</li>
             </ul>
-          </div>
+          </DataWidget>
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-            <div className="text-lg font-semibold">What we don't do</div>
-            <ul className="mt-3 space-y-2 text-sm text-white/70">
-              <li>• No medical claims or guarantees</li>
-              <li>• No dosing instructions</li>
-              <li>• No "miracle stack" marketing</li>
-              <li>• No pressure tactics</li>
+          <DataWidget title="What we don't do">
+            <ul className="space-y-2 text-sm text-slate-600">
+              <li>No medical claims or guarantees</li>
+              <li>No dosing instructions</li>
+              <li>No miracle stack marketing</li>
+              <li>No pressure tactics</li>
             </ul>
-          </div>
+          </DataWidget>
         </div>
       </Section>
 
       {/* NEWSLETTER */}
       <Section id="newsletter" kicker="Stay sharp" title="Protocol Notes, delivered weekly">
-        <div className="surface p-7 sm:p-10">
-          <div className="grid gap-6 md:grid-cols-3 md:items-center">
+        <div className="surface p-8 sm:p-12">
+          <div className="grid gap-8 md:grid-cols-3 md:items-center">
             <div className="md:col-span-2">
-              <p className="text-white/70 leading-relaxed">
-                Get clear research context, practical optimization fundamentals, and "what matters this
-                week" summaries. Built for people who prefer signal over noise.
+              <p className="text-slate-600 leading-relaxed">
+                Get clear research context, practical optimization fundamentals, and what matters this
+                week summaries. Built for people who prefer signal over noise.
               </p>
-              <div className="mt-4 text-xs text-white/55">
+              <div className="mt-4 text-xs text-slate-500">
                 No spam. Unsubscribe anytime. Educational content only.
               </div>
             </div>
@@ -161,18 +164,18 @@ export default function HomePage() {
 
 function TrustPill(props: { title: string; text: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-      <div className="text-sm font-semibold">{props.title}</div>
-      <div className="mt-1 text-xs text-white/65">{props.text}</div>
+    <div className="surface-sharp p-4 sm:p-5">
+      <div className="text-xs sm:text-sm font-semibold text-slate-900">{props.title}</div>
+      <div className="mt-1.5 text-[10px] sm:text-xs text-slate-600 leading-snug sm:leading-normal">{props.text}</div>
     </div>
   );
 }
 
 function LibraryItem(props: { title: string; text: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-      <div className="text-sm font-semibold">{props.title}</div>
-      <div className="mt-2 text-sm text-white/70 leading-relaxed">{props.text}</div>
+    <div className="surface-sharp p-5 sm:p-6">
+      <div className="text-xs sm:text-sm font-semibold text-slate-900">{props.title}</div>
+      <div className="mt-2.5 text-xs sm:text-sm text-slate-600 leading-snug sm:leading-relaxed">{props.text}</div>
     </div>
   );
 }

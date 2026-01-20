@@ -5,29 +5,47 @@ type Props = {
   href?: string;
   onClick?: () => void;
   children: React.ReactNode;
-  variant?: "primary" | "ghost";
+  variant?: "primary" | "ghost" | "outline" | "technical";
+  size?: "sm" | "md" | "lg";
   className?: string;
 };
 
-export default function Button({ href, onClick, children, variant = "primary", className }: Props) {
-  const base =
-    "inline-flex items-center justify-center rounded-full !px-2.5 !py-1 text-xs font-semibold transition focus:outline-none focus:ring-2 focus:ring-white/30";
-  const styles =
-    variant === "primary"
-      ? "bg-white text-black hover:bg-white/90"
-      : "bg-white/5 text-white hover:bg-white/10 border border-white/10";
+export default function Button({ 
+  href, 
+  onClick, 
+  children, 
+  variant = "primary", 
+  size = "md",
+  className 
+}: Props): React.ReactElement {
+  const base = "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20";
+  
+  const sizes = {
+    sm: "px-3 py-1.5 text-xs",
+    md: "px-4 py-2 text-sm",
+    lg: "px-6 py-3 text-base"
+  };
+  
+  const variants = {
+    primary: "bg-blue-600 text-white hover:bg-blue-700 shadow-sm",
+    ghost: "bg-transparent text-slate-700 hover:bg-slate-100",
+    outline: "bg-transparent text-slate-700 border border-slate-300 hover:bg-slate-50 hover:border-slate-400",
+    technical: "bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200 hover:border-slate-300 font-mono text-xs tracking-wider uppercase"
+  };
+
+  const style = cn(base, sizes[size], variants[variant], className);
 
   if (href) {
     return (
-      <Link href={href} className={cn(base, styles, className)}>
+      <Link href={href} className={style}>
         {children}
       </Link>
-    );
+    ) as React.ReactElement;
   }
 
   return (
-    <button onClick={onClick} className={cn(base, styles, className)}>
+    <button onClick={onClick} className={style}>
       {children}
     </button>
-  );
+  ) as React.ReactElement;
 }

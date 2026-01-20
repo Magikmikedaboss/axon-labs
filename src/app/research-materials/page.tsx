@@ -4,6 +4,7 @@ import Section from "@/components/Section";
 import Button from "@/components/Button";
 import ResearchMaterialsCatalog from "@/components/ResearchMaterialsCatalog";
 import { RESEARCH_MATERIALS } from "@/lib/researchMaterials";
+import RuoAnchor from "@/components/RuoAnchor";
 
 export default function ResearchMaterialsPage() {
   return (
@@ -17,6 +18,9 @@ export default function ResearchMaterialsPage() {
           </div>
 
           <h1 className="h1 mt-5">Research Materials</h1>
+          <div className="mt-3">
+            <RuoAnchor />
+          </div>
           <p className="mt-4 text-white/70 max-w-3xl leading-relaxed">
             Documentation-first catalog for qualified researchers. No medical claims, no usage instructions,
             no dosing guidance. Just traceability, context, and standards.

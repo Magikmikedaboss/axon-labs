@@ -4,8 +4,9 @@ export const SITE = {
   description:
     "Research-driven education on peptides, protocols, and biohacking systems. Data over hype. Built for curious optimizers.",
   nav: [
-    { href: "/what-is-biohacking", label: "What is Biohacking?" },
-    { href: "/protocols", label: "Protocols" },
+    { href: "/what-is-biohacking", label: "Biohacking" },
+    { href: "/ruo", label: "RUO" },
+    { href: "/research-focus", label: "Research Focus" },
     { href: "/research-materials", label: "Research Materials" },
     { href: "/#library", label: "Research Library" },
     { href: "/#newsletter", label: "Newsletter" },
